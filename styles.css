@@ -4,7 +4,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  background: url('background.gif') no-repeat center center fixed;
+  background: url('assets/background.gif') no-repeat center center fixed;
   background-size: cover;
 }
 
