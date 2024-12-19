@@ -1,97 +1,150 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>migumind</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+    <title>Web Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      .hover-invert:hover {
+        background-color: black;
+        color: white;
+      }
+      .gradient-map {
+        background: radial-gradient(
+          circle,
+          rgb(102, 92, 211),
+          rgb(203, 26, 88)
+        );
+        background-size: 200% 200%;
+        transition: background-position 0.5s;
+      }
+      .gradient-map:hover {
+        background-position: 100% 0;
+      }
+      .circle:hover {
+        background-color: white;
+        color: black;
+      }
+      .circle:hover .fa-instagram {
+        display: block;
+      }
+      .circle:hover .fa-soundcloud {
+        display: block;
+      }
+      .circle:hover .fa-youtube {
+        display: block;
+      }
+      .fa-instagram,
+      .fa-soundcloud,
+      .fa-youtube {
+        display: none;
+      }
+    </style>
+    <script>
+      document.addEventListener('mousemove', function (e) {
+        const gradientMap = document.querySelector('.gradient-map');
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+        gradientMap.style.backgroundPosition = `${x}% ${y}%`;
+      });
+    </script>
   </head>
-  <body>
-    <header>
-      <div class="scrolling-banner">
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-        <span class="scrolling-text">//migumind.com</span>
-      </div>
-    </header>
-    <nav>
-      <a href="#about">about</a>
-      <a href="#services">services</a>
-      <a href="#shop">shop</a>
-      <a href="#contact">contact</a>
-    </nav>
-    <main>
-      <!-- Shop Section (Optional) -->
-      <section id="shop">
-        <div class="grid">
-          <!-- Example Product -->
-          <div class="product">
-            <img src="20A4_20A5_ontothenext.png" alt="Art Print 1" />
-            <p>Art Print 1</p>
-            <button class="purchase-btn">Purchase</button>
-          </div>
-          <div class="product">
-            <img src="20A4_20A5_ribcagezippa.png" alt="Art Print 2" />
-            <p>Art Print 2</p>
-            <button class="purchase-btn">Purchase</button>
-          </div>
-          <div class="product">
-            <img src="20A4_20A5_sliceoflife.png" alt="Art Print 3" />
-            <p>Art Print 3</p>
-            <button class="purchase-btn">Purchase</button>
-          </div>
-          <!-- Repeat for more products -->
-        </div>
-      </section>
-
-      <!-- Audio Player Section -->
-      <section class="audio-player">
-        <h3>Music Player</h3>
-        <audio id="audio-player" controls autoplay>
-          <source
-            id="audio-source"
-            src="Jansport J - Can We Connect.mp3"
-            type="audio/mp3"
+  <body class="bg-blue-700 text-black font-sans">
+    <div
+      class="container mx-auto p-4 border-4 border-black rounded-lg shadow-lg bg-white"
+      style="
+        margin: 10px auto;
+        max-width: 66.67%;
+        box-shadow: 10px 10px 0px 0px black;
+      "
+      style="margin: 10px auto; max-width: 66.67%"
+    >
+      <!-- Header -->
+      <div
+        class="flex justify-between items-center border-b-2 border-black pb-2"
+      >
+        <div class="flex items-center space-x-2">
+          <img
+            alt="Animated GIF logo"
+            class="h-6 w-24"
+            height="24"
+            src="assets/migutxtcut.gif"
+            width="100"
           />
-          Your browser does not support the audio element.
-        </audio>
-        <div>
-          <button onclick="previousSong()" ></button>>Previous Song</button>
-          <button onclick="toggleAudio()" >Play / Pause</button>
-          <button onclick="nextSong()"></button>>Next Song</button>
+          <span class="text-sm">miguel pacheco.</span>
         </div>
-      </section>
+        <div class="flex space-x-2">
+          <div class="h-3 w-3 bg-black rounded-full"></div>
+          <div class="h-3 w-3 bg-black rounded-full"></div>
+          <div class="h-3 w-3 bg-black rounded-full"></div>
+        </div>
+      </div>
 
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <p>
-          Have questions? Reach out to us at
-          <a href="mailto:info@migumind.com">info@migumind.com</a>.
-        </p>
-      </section>
-    </main>
+      <!-- Main Content -->
+      <div class="flex mt-4">
+        <!-- Sidebar -->
+        <div class="flex flex-col space-y-4">
+          <a
+            href="portfolio.html"
+            class="border-2 border-black p-4 w-48 h-48 flex items-center justify-center rounded-lg hover-invert"
+          >
+            <span>Portfolio</span>
+          </a>
+          <a
+            href="projects.html"
+            class="border-2 border-black p-4 w-48 h-48 flex items-center justify-center rounded-lg hover-invert"
+          >
+            <span>Projects</span>
+          </a>
+        </div>
 
-    <footer>
-      <p>&copy; 2024 Migumind. All rights reserved.</p>
-    </footer>
+        <!-- Main Section -->
+        <div
+          class="border-2 border-black p-4 w-full h-96 flex items-center justify-center ml-4 gradient-map"
+          style="margin-bottom: -4rem"
+        >
+          <!-- No text inside the gradient map -->
+        </div>
+      </div>
 
-    <!-- Email Form Modal -->
-    <div id="email-form" class="modal hidden">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Enter Your Email</h2>
-        <form>
-          <input type="email" placeholder="Your email" required />
-          <button type="submit">Submit</button>
-        </form>
+      <!-- Footer -->
+      <div class="flex justify-between items-center mt-4">
+        <div class="flex space-x-4">
+          <a
+            class="h-8 w-8 bg-black rounded-full flex items-center justify-center circle"
+            href="https://www.instagram.com/migumind/?hl=en"
+          >
+            <i class="fab fa-instagram text-white"></i>
+          </a>
+          <a
+            class="h-8 w-8 bg-black rounded-full flex items-center justify-center circle"
+            href="https://soundcloud.com/trapsupraz"
+          >
+            <i class="fab fa-soundcloud text-white"></i>
+          </a>
+          <a
+            class="h-8 w-8 bg-black rounded-full flex items-center justify-center circle"
+            href="https://www.youtube.com/@migumedia"
+          >
+            <i class="fab fa-youtube text-white"></i>
+          </a>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img
+            alt="Animated GIF logo"
+            class="h-24 w-24"
+            height="240"
+            src="assets/migutxtcut.gif"
+            width="100"
+            vertical-align="top"
+            float="none"
+          />
+          <span class="text-sm">miguel pacheco.</span>
+        </div>
       </div>
     </div>
   </body>
